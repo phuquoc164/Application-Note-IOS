@@ -207,6 +207,7 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleAspectFit" semanticContentAttribute="spatial" translatesAutoresizingMaskIntoConstraints="NO" id="pmz-sl-SKW">
                                 <rect key="frame" x="0.0" y="623" width="375" height="44"/>
                                 <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="ImG-dP-row"/>
                                     <constraint firstAttribute="height" constant="44" id="qKG-aH-QoF"/>
                                 </constraints>
                                 <items>
