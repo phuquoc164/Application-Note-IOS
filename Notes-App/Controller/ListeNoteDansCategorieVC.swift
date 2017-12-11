@@ -142,6 +142,8 @@ class ListeNoteDansCategorieVC: UITableViewController{
                     SVProgressHUD.setBackgroundColor(UIColor.red)
                     SVProgressHUD.showError(withStatus: "Your note is already existe")
                 } else {
+                    print(newNote.titre)
+                    print(newNote.content)
                     tableNotes.insertNewNoteToTable(titre: newNote.titre, content: newNote.content, imageBase64: newNote.imageBase64, date: newNote.dateCreated)
                     retrievelistNotesFromDatabase()
                     self.listeNotesTableView.reloadData()

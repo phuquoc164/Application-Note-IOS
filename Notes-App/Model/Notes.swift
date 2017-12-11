@@ -77,15 +77,7 @@ class Notes {
     
     
     func updateNote(titre: String, content: String,imageBase64: String, dateCreated: Date, isModified: Bool) {
-        print("Mau thu \(dateCreated)")
-        do {
-            for note in try database.prepare(tableNotes) {
-                print(note[self.dateCreated])
-            }
-        } catch {
-            print("Error update list Notes From Table: \(error)")
-        }
-        let noteUpdate = self.tableNotes.filter(self.dateCreated == dateCreated)
+        let noteUpdate = self.tableNotes.filter(self.dateCreated == dateCreated && self.category == categoryChosen)
         do {
             try database.run(noteUpdate.update(self.titre <- titre, self.content <- content,self.imageBase64 <- imageBase64, self.isModified <- isModified))
             print("Note Updated")

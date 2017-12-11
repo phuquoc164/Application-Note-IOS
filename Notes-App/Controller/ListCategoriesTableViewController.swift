@@ -78,6 +78,9 @@ class ListCategoryTableViewController: UITableViewController {
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.
+        if indexPath.row == 0 {
+            return false
+        }
         return true
     }
     
@@ -117,40 +120,44 @@ class ListCategoryTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if !isEditing {
-            let alert = UIAlertController(title: "Modify Category", message: nil, preferredStyle: .alert)
-            
-            let oldCategory = (tableView.cellForRow(at: indexPath)?.textLabel?.text)!
-            alert.addTextField(configurationHandler: { (textField) in
-                textField.placeholder = oldCategory
-            })
-            
-            let action = UIAlertAction(title: "Submit", style: .default, handler: { (_) in
-                guard
-                    let newCategory = alert.textFields?.first?.text
-                    else {return}
-                if newCategory != "" {
-                    if self.tableCategories.checkCategoryExists(categoryName: newCategory) {
-                        SVProgressHUD.setForegroundColor(UIColor.white)
-                        SVProgressHUD.setBackgroundColor(UIColor.red)
-                        SVProgressHUD.showError(withStatus: "This Category is already existed!")
+            if indexPath.row == 0 {
+                tableView.deselectRow(at: indexPath, animated: true)
+            } else {
+                let alert = UIAlertController(title: "Modify Category", message: nil, preferredStyle: .alert)
+                
+                let oldCategory = (tableView.cellForRow(at: indexPath)?.textLabel?.text)!
+                alert.addTextField(configurationHandler: { (textField) in
+                    textField.placeholder = oldCategory
+                })
+                
+                let action = UIAlertAction(title: "Submit", style: .default, handler: { (_) in
+                    guard
+                        let newCategory = alert.textFields?.first?.text
+                        else {return}
+                    if newCategory != "" {
+                        if self.tableCategories.checkCategoryExists(categoryName: newCategory) {
+                            SVProgressHUD.setForegroundColor(UIColor.white)
+                            SVProgressHUD.setBackgroundColor(UIColor.red)
+                            SVProgressHUD.showError(withStatus: "This Category is already existed!")
+                        } else {
+                            self.tableCategories.updateCategory(oldCategory: oldCategory, newCategory: newCategory)
+                            Notes().updateCategory(oldCategory: oldCategory, newCategory: newCategory)
+                            self.retrievelistCategoriesFromDatabase()
+                            
+                            
+                            self.categoryTableView.reloadData()
+                        }
                     } else {
-                        self.tableCategories.updateCategory(oldCategory: oldCategory, newCategory: newCategory)
-                        Notes().updateCategory(oldCategory: oldCategory, newCategory: newCategory)
-                        self.retrievelistCategoriesFromDatabase()
-                        
-                    
-                    self.categoryTableView.reloadData()
+                        SVProgressHUD.showError(withStatus: "Category mustn't be empty!")
                     }
-                } else {
-                    SVProgressHUD.showError(withStatus: "Category mustn't be empty!")
-                }
-            })
-            
-            let actionCancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-            
-            alert.addAction(action)
-            alert.addAction(actionCancel)
-            present(alert, animated: true, completion: nil)
+                })
+                
+                let actionCancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+                
+                alert.addAction(action)
+                alert.addAction(actionCancel)
+                present(alert, animated: true, completion: nil)
+            }
         }
         
         if indexPath.row >= listCategories.count && isEditing {
