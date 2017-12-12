@@ -59,7 +59,7 @@ class SideMenuVC: UITableViewController {
 
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         if section == 1 {
-            return "Liste Categories"
+            return "List Categories"
         } else {
             return "MENU"
         }
@@ -73,7 +73,7 @@ class SideMenuVC: UITableViewController {
         // Configure the cell...
         
         if indexPath.section == 0 {
-            cell.textLabel?.text = "Ajouter / Modifier Type"
+            cell.textLabel?.text = "Add / Modify Category"
         } else {
             cell.textLabel?.text = listCategories[indexPath.row].categoryName
         }

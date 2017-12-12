@@ -93,19 +93,20 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aRD-6k-8AY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3135" y="118"/>
+            <point key="canvasLocation" x="3159" y="55"/>
         </scene>
         <!--Side MenuVC-->
         <scene sceneID="f7d-nE-WLU">
             <objects>
                 <tableViewController id="0DI-yR-mWA" customClass="SideMenuVC" customModule="Notes_App" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="0nL-0t-W23">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="0nL-0t-W23">
                         <rect key="frame" x="0.0" y="0.0" width="240" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <color key="tintColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="cellMenu" id="gXj-ow-cjf">
-                                <rect key="frame" x="0.0" y="28" width="240" height="44"/>
+                                <rect key="frame" x="0.0" y="55.5" width="240" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gXj-ow-cjf" id="te7-mT-n5F">
                                     <rect key="frame" x="0.0" y="0.0" width="206" height="43.5"/>
@@ -125,7 +126,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BD8-5Q-O24" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-347" y="888"/>
+            <point key="canvasLocation" x="-486" y="904"/>
         </scene>
         <!--Home-->
         <scene sceneID="Yqm-iH-Izq">
@@ -194,7 +195,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nEf-1D-gMh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1364" y="887"/>
+            <point key="canvasLocation" x="1183" y="887"/>
         </scene>
         <!--Note Detail-->
         <scene sceneID="PrC-ve-WjP">
@@ -349,7 +350,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uIC-jx-yxq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="118" y="1623"/>
+            <point key="canvasLocation" x="164" y="1621"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="5Py-Mj-JGx">
@@ -375,7 +376,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="egK-Sw-19i" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2233" y="1460"/>
+            <point key="canvasLocation" x="2129" y="1466"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="8e7-62-uXZ">
@@ -398,7 +399,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gox-bz-FxQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2161" y="117"/>
+            <point key="canvasLocation" x="2129" y="56"/>
         </scene>
     </scenes>
     <resources>
@@ -407,6 +408,6 @@
         <image name="menu-hamburger" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="mTD-05-Ye8"/>
+        <segue reference="m7B-as-AXJ"/>
     </inferredMetricsTieBreakers>
 </document>
