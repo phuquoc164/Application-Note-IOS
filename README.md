@@ -1,6 +1,6 @@
 # Application Notes-App
 
-A simple note taking app pour IOS device which uses [**SQlite**](https://github.com/stephencelis/SQLite.swift) for saving data.
+A simple note taking app for IOS device which uses [**SQlite**](https://github.com/stephencelis/SQLite.swift) for saving data.
 
 
 ### Features
