@@ -80,8 +80,6 @@ class SideMenuVC: UITableViewController {
 
         return cell
     }
-    
-    
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         NotificationCenter.default.post(name: NSNotification.Name("showSideMenu"), object: nil)
