@@ -51,10 +51,14 @@ class ListeNoteDansCategorieVC: UITableViewController{
     }
     
     @objc func showModifyCategoryInterface(){
+        sideMenuOpen = false
+        listeNotesTableView.isUserInteractionEnabled = true
         performSegue(withIdentifier: "showModifyCategoryInterfaceSegue", sender: self)
     }
     
     @objc func showCategoryInterface(){
+        sideMenuOpen = false
+        listeNotesTableView.isUserInteractionEnabled = true
         navigationItem.title = categoryChosen
         retrievelistNotesFromDatabase()
         listeNotesTableView.reloadData()
